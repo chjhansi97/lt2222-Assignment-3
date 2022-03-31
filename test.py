@@ -9,6 +9,7 @@
 import argparse
 import pickle
 import numpy as np
+import skm
 from sklearn.svm import SVC
 from sklearn.naive_bayes import MultinomialNB
 from sklearn import metrics
@@ -61,10 +62,12 @@ def eval_model(model, X_test, y_test, average_type):
     precision = metrics.precision_score(y_test, y_pred, average=average_type)
     recall = metrics.recall_score(y_test, y_pred, average=average_type)
     f_measure = metrics.f1_score(y_test, y_pred, average=average_type)
+    accuracy = skm.accuracy_score(test_y, pred_y)
+    accuracy_score = "Accuracy:" + str(accuracy)
     precision_score = "Precision:"+ str(precision)
     recall_score = "Recall:"+str(recall) 
     f_measure_score = "F-measure:"+str(f_measure)
-    print(precision_score,"\n", recall_score,"\n", f_measure_score)
+    print(accuracy_score, "\n", precision_score,"\n", recall_score,"\n", f_measure_score)
     
 
 if __name__ =="__main__":
