@@ -9,7 +9,7 @@
 import argparse
 import pickle
 import numpy as np
-import skm
+import sklearn.metrics as skm
 from sklearn.svm import SVC
 from sklearn.naive_bayes import MultinomialNB
 from sklearn import metrics
